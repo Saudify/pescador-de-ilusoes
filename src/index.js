@@ -1,0 +1,5 @@
+/**
+ * Entrypoint :)
+ */
+
+'use strict'
