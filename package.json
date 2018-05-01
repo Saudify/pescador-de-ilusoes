@@ -4,7 +4,9 @@
   "description": "Saudify crawler",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint && npm run test:unit && npm run test:integration",
+    "test:unit": "ava $(find test/unit -name '*.test.js') --verbose",
+    "test:integration": "ava $(find test/integration -name '*.test.js') --verbose",
     "lint": "eslint src/ test/"
   },
   "repository": {
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/Saudify/pescador-de-ilusoes#readme",
   "devDependencies": {
+    "ava": "1.0.0-beta.4",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
