@@ -1,3 +1,4 @@
+import { stringify } from 'querystring'
 import config from './config'
 
 /**
@@ -6,6 +7,9 @@ import config from './config'
  * @returns {String}
  */
 export function mountSearchUrl (searchValue) {
-  // TODO: Refactor
-  return `${config.protocol}://${config.host}/${config.path}?${config.search_qs}=${searchValue}`
+  const qs = stringify({
+    [config.search_qs]: searchValue
+  })
+
+  return `${config.protocol}://${config.host}/${config.path}?${qs}`
 }
